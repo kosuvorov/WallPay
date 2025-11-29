@@ -198,8 +198,8 @@ export default function AdminSchedulePage() {
 
                     {message && (
                         <div className={`p-3 rounded-lg mb-4 ${message.startsWith('✓')
-                                ? 'bg-green-500/10 border border-green-500/20 text-green-400'
-                                : 'bg-red-500/10 border border-red-500/20 text-red-400'
+                            ? 'bg-green-500/10 border border-green-500/20 text-green-400'
+                            : 'bg-red-500/10 border border-red-500/20 text-red-400'
                             }`}>
                             {message}
                         </div>
@@ -224,13 +224,13 @@ export default function AdminSchedulePage() {
                                         key={wallpaper.id}
                                         onClick={() => toggleWallpaper(wallpaper.id)}
                                         className={`bg-[#0a0a0a] border-2 rounded-xl overflow-hidden transition-all ${selected
-                                                ? 'border-[#F97316] ring-2 ring-[#F97316]/50'
-                                                : 'border-[#2a2a2a] hover:border-[#F97316]/50'
+                                            ? 'border-[#F97316] ring-2 ring-[#F97316]/50'
+                                            : 'border-[#2a2a2a] hover:border-[#F97316]/50'
                                             }`}
                                     >
                                         <div className="relative aspect-[9/19.5]">
                                             <Image
-                                                src={wallpaper.image_url_1242}
+                                                src={wallpaper.image_url}
                                                 alt={wallpaper.title}
                                                 fill
                                                 className="object-cover"

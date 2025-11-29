@@ -174,7 +174,7 @@ export default function BrandWallpapersPage() {
                                     >
                                         <div className="relative aspect-[9/19.5]">
                                             <Image
-                                                src={wallpaper.image_url_1242}
+                                                src={wallpaper.image_url}
                                                 alt={wallpaper.title}
                                                 fill
                                                 className="object-cover"

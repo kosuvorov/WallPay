@@ -11,7 +11,7 @@ interface PendingWallpaper {
     brand_name: string
     title: string
     description: string
-    image_url_1242: string
+    image_url: string
     created_at: string
 }
 
@@ -139,7 +139,7 @@ export default function AdminPendingPage() {
                                 >
                                     <div className="relative aspect-[9/19.5]">
                                         <Image
-                                            src={wallpaper.image_url_1242}
+                                            src={wallpaper.image_url}
                                             alt={wallpaper.title}
                                             fill
                                             className="object-cover"
