@@ -10,7 +10,7 @@ interface Wallpaper {
     id: string
     title: string
     description: string
-    image_url_1242: string
+    image_url: string
     status: 'pending' | 'approved' | 'rejected'
     created_at: string
 }

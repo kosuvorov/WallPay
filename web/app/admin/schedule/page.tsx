@@ -10,7 +10,7 @@ interface ApprovedWallpaper {
     id: string
     brand_name: string
     title: string
-    image_url_1242: string
+    image_url: string
 }
 
 interface Selection {
