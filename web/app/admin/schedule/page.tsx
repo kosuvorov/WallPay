@@ -72,7 +72,7 @@ export default function AdminSchedulePage() {
         setLoading(true)
         const { data, error } = await supabase
             .from('wallpapers')
-            .select('id, brand_name, title, image_url_1242')
+            .select('id, brand_name, title, image_url')
             .eq('status', 'approved')
             .order('created_at', { ascending: false })
 
