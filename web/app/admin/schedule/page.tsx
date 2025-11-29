@@ -107,8 +107,8 @@ export default function AdminSchedulePage() {
     }
 
     async function handleSave() {
-        if (!selectedDate || selectedWallpapers.length < 8) {
-            setMessage('Please select at least 8 wallpapers')
+        if (!selectedDate || selectedWallpapers.length < 1) {
+            setMessage('Please select at least 1 wallpaper')
             return
         }
 
@@ -185,11 +185,11 @@ export default function AdminSchedulePage() {
                             className="px-4 py-2 bg-[#0a0a0a] border border-[#2a2a2a] rounded-lg focus:border-[#F97316] focus:outline-none"
                         />
                         <div className="text-sm text-gray-400">
-                            Selected: <span className="text-[#F97316] font-bold">{selectedWallpapers.length}</span> / 8-15
+                            Selected: <span className="text-[#F97316] font-bold">{selectedWallpapers.length}</span> / 1-15
                         </div>
                         <button
                             onClick={handleSave}
-                            disabled={saving || selectedWallpapers.length < 8 || selectedWallpapers.length > 15}
+                            disabled={saving || selectedWallpapers.length < 1 || selectedWallpapers.length > 15}
                             className="ml-auto px-6 py-2 bg-gradient-to-r from-[#F97316] to-[#DC2626] text-white font-bold rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
                         >
                             {saving ? 'Saving...' : 'Save Schedule'}
