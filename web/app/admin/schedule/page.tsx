@@ -177,13 +177,26 @@ export default function AdminSchedulePage() {
                     <p className="text-gray-400 mb-6">Select 8-15 wallpapers for the chosen date</p>
 
                     <div className="flex items-center gap-4 mb-4">
-                        <input
-                            type="date"
-                            value={selectedDate}
-                            onChange={(e) => setSelectedDate(e.target.value)}
-                            min={new Date().toISOString().split('T')[0]}
-                            className="px-4 py-2 bg-[#0a0a0a] border border-[#2a2a2a] rounded-lg focus:border-[#F97316] focus:outline-none"
-                        />
+                        <div className="flex items-center gap-2">
+                            <input
+                                type="date"
+                                value={selectedDate}
+                                onChange={(e) => setSelectedDate(e.target.value)}
+                                min={new Date().toISOString().split('T')[0]}
+                                className="px-4 py-2 bg-[#0a0a0a] border border-[#2a2a2a] rounded-lg focus:border-[#F97316] focus:outline-none"
+                            />
+                            <button
+                                onClick={() => setSelectedDate(new Date().toISOString().split('T')[0])}
+                                className="px-3 py-2 bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg hover:border-[#F97316] text-sm transition-colors"
+                            >
+                                Today
+                            </button>
+                            {selectedDate === new Date().toISOString().split('T')[0] && (
+                                <span className="px-2 py-1 bg-green-500/10 text-green-400 text-xs font-bold rounded border border-green-500/20">
+                                    LIVE NOW
+                                </span>
+                            )}
+                        </div>
                         <div className="text-sm text-gray-400">
                             Selected: <span className="text-[#F97316] font-bold">{selectedWallpapers.length}</span> / 1-15
                         </div>
