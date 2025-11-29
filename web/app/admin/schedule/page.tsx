@@ -234,6 +234,7 @@ export default function AdminSchedulePage() {
                                                 alt={wallpaper.title}
                                                 fill
                                                 className="object-cover"
+                                                unoptimized
                                             />
                                             {selected && (
                                                 <div className="absolute top-2 right-2 w-8 h-8 bg-[#F97316] rounded-full flex items-center justify-center">

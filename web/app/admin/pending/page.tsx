@@ -143,6 +143,7 @@ export default function AdminPendingPage() {
                                             alt={wallpaper.title}
                                             fill
                                             className="object-cover"
+                                            unoptimized
                                         />
                                     </div>
                                     <div className="p-4">
