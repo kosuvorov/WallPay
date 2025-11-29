@@ -10,11 +10,9 @@ export default function BrandUploadPage() {
     const [brandName, setBrandName] = useState('')
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [image1242, setImage1242] = useState<File | null>(null)
-    const [image1179, setImage1179] = useState<File | null>(null)
+    const [imageFile, setImageFile] = useState<File | null>(null)
     const [uploading, setUploading] = useState(false)
-    const [success, setSuccess] = useState(false)
-    const [error, setError] = useState('')
+    const [message, setMessage] = useState('')
     const router = useRouter()
     const supabase = createClient()
 
@@ -44,69 +42,61 @@ export default function BrandUploadPage() {
         checkAuth()
     }, [router, supabase])
 
-    const handleUpload = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        if (!user || !image1242 || !image1179) return
+        if (!imageFile) {
+            setMessage('Please select an image')
+            return
+        }
 
         setUploading(true)
-        setError('')
-        setSuccess(false)
+        setMessage('')
 
         try {
-            // Upload images to Supabase Storage
-            const timestamp = Date.now()
-            const image1242Path = `${user.id}/${timestamp}_1242.jpg`
-            const image1179Path = `${user.id}/${timestamp}_1179.jpg`
+            const user = (await supabase.auth.getUser()).data.user
+            if (!user) throw new Error('Not authenticated')
 
-            const { error: upload1242Error } = await supabase.storage
+            // Upload single image to storage
+            const fileExt = imageFile.name.split('.').pop()
+            const fileName = `${user.id}/${Date.now()}.${fileExt}`
+            const { error: uploadError } = await supabase.storage
                 .from('wallpapers')
-                .upload(image1242Path, image1242)
+                .upload(fileName, imageFile)
 
-            if (upload1242Error) throw upload1242Error
+            if (uploadError) throw uploadError
 
-            const { error: upload1179Error } = await supabase.storage
+            // Get public URL
+            const { data: { publicUrl } } = supabase.storage
                 .from('wallpapers')
-                .upload(image1179Path, image1179)
+                .getPublicUrl(fileName)
 
-            if (upload1179Error) throw upload1179Error
-
-            // Get public URLs
-            const { data: url1242 } = supabase.storage
-                .from('wallpapers')
-                .getPublicUrl(image1242Path)
-
-            const { data: url1179 } = supabase.storage
-                .from('wallpapers')
-                .getPublicUrl(image1179Path)
-
-            // Create wallpaper record
+            // Insert wallpaper record
             const { error: insertError } = await supabase
                 .from('wallpapers')
                 .insert({
                     brand_id: user.id,
                     brand_name: brandName,
-                    title,
-                    description,
-                    image_url_1242: url1242.publicUrl,
-                    image_url_1179: url1179.publicUrl,
-                    status: 'pending',
+                    title: title,
+                    description: description,
+                    image_url: publicUrl,
+                    status: 'pending'
                 })
 
             if (insertError) throw insertError
 
-            setSuccess(true)
+            setMessage('Wallpaper uploaded successfully! Awaiting approval.')
             setTitle('')
             setDescription('')
-            setImage1242(null)
-            setImage1179(null)
+            setImageFile(null)
 
-            // Reset file inputs
-            const fileInputs = document.querySelectorAll('input[type="file"]')
-            fileInputs.forEach((input: any) => (input.value = ''))
+            // Reset file input
+            const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement
+            if (fileInput) fileInput.value = ''
 
-            setTimeout(() => setSuccess(false), 3000)
-        } catch (err: any) {
-            setError(err.message || 'Upload failed')
+            setTimeout(() => setMessage(''), 3000)
+
+        } catch (error: any) {
+            setMessage(`Error: ${error.message}`)
         } finally {
             setUploading(false)
         }
@@ -132,7 +122,7 @@ export default function BrandUploadPage() {
                     <h1 className="text-3xl font-bold mb-2">Upload Wallpaper</h1>
                     <p className="text-gray-400 mb-6">Upload your brand wallpaper for approval</p>
 
-                    <form onSubmit={handleUpload} className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
                             <label htmlFor="title" className="block text-sm font-medium mb-2">
                                 Wallpaper Title
@@ -163,48 +153,29 @@ export default function BrandUploadPage() {
                         </div>
 
                         <div>
-                            <label htmlFor="image1242" className="block text-sm font-medium mb-2">
-                                Image (1242×2688) *
+                            <label htmlFor="wallpaper-image" className="block text-sm font-medium mb-2">
+                                Wallpaper Image
                             </label>
                             <input
-                                id="image1242"
+                                id="wallpaper-image"
                                 type="file"
                                 accept="image/*"
-                                onChange={(e) => setImage1242(e.target.files?.[0] || null)}
+                                onChange={(e) => setImageFile(e.target.files?.[0] || null)}
                                 required
                                 className="w-full px-4 py-3 bg-[#0a0a0a] border border-[#2a2a2a] rounded-lg focus:border-[#FBBF24] focus:outline-none transition-colors file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-gradient-to-r file:from-[#FBBF24] file:to-[#F97316] file:text-black file:font-medium file:cursor-pointer"
                             />
+                            <p className="text-xs text-gray-500 mt-2">Upload a high-resolution vertical image (will be auto-cropped for different screen sizes)</p>
                         </div>
 
-                        <div>
-                            <label htmlFor="image1179" className="block text-sm font-medium mb-2">
-                                Image (1179×2556) *
-                            </label>
-                            <input
-                                id="image1179"
-                                type="file"
-                                accept="image/*"
-                                onChange={(e) => setImage1179(e.target.files?.[0] || null)}
-                                required
-                                className="w-full px-4 py-3 bg-[#0a0a0a] border border-[#2a2a2a] rounded-lg focus:border-[#FBBF24] focus:outline-none transition-colors file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-gradient-to-r file:from-[#FBBF24] file:to-[#F97316] file:text-black file:font-medium file:cursor-pointer"
-                            />
-                        </div>
-
-                        {error && (
-                            <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-3 text-red-400 text-sm">
-                                {error}
-                            </div>
-                        )}
-
-                        {success && (
-                            <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3 text-green-400 text-sm">
-                                Wallpaper uploaded successfully! Awaiting approval.
+                        {message && (
+                            <div className={`rounded-lg p-3 text-sm ${message.includes('Error') ? 'bg-red-500/10 border border-red-500/20 text-red-400' : 'bg-green-500/10 border border-green-500/20 text-green-400'}`}>
+                                {message}
                             </div>
                         )}
 
                         <button
                             type="submit"
-                            disabled={uploading || !image1242 || !image1179}
+                            disabled={uploading || !imageFile}
                             className="w-full py-3 bg-gradient-to-r from-[#FBBF24] to-[#F97316] text-black font-bold rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
                         >
                             {uploading ? 'Uploading...' : 'Upload Wallpaper'}

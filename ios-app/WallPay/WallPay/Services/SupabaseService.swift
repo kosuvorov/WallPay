@@ -1,7 +1,8 @@
 import Foundation
 import Supabase
 
-actor SupabaseService {
+@MainActor
+class SupabaseService {
     static let shared = SupabaseService()
     
     private let client: SupabaseClient
@@ -17,14 +18,18 @@ actor SupabaseService {
     
     func signUp(email: String, password: String) async throws -> Session {
         let response = try await client.auth.signUp(email: email, password: password)
-        guard let session = response.session else {
-            throw NSError(domain: "SignUp", code: -1, userInfo: [NSLocalizedDescriptionKey: "No session returned"])
+        
+        // If email confirmation is enabled, session might be nil
+        if let session = response.session {
+            // Create user profile
+            try await createUserProfile(userId: session.user.id, email: email)
+            return session
+        } else {
+            // Email confirmation required - user needs to check email
+            throw NSError(domain: "SignUp", code: -1, userInfo: [
+                NSLocalizedDescriptionKey: "Please check your email to confirm your account"
+            ])
         }
-        
-        // Create user profile
-        try await createUserProfile(userId: session.user.id, email: email)
-        
-        return session
     }
     
     func signIn(email: String, password: String) async throws -> Session {
