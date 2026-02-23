@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WallPay — Admin Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-brand">
+      <div class="logo-mark">W</div>
+      <div>
+        <h1 class="header-title">WallPay</h1>
+        <p class="header-subtitle">Wallpaper Management</p>
+      </div>
+    </div>
+    <div class="header-stats" id="stats">
+      <div class="stat">
+        <span class="stat-value" id="totalCount">—</span>
+        <span class="stat-label">Wallpapers</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="activeCount">—</span>
+        <span class="stat-label">Active</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Upload Section -->
+  <section class="upload-section">
+    <div class="upload-zone" id="uploadZone">
+      <div class="upload-zone-content">
+        <div class="upload-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+        </div>
+        <p class="upload-text">Drop wallpapers here or <span class="upload-browse">browse</span></p>
+        <p class="upload-hint">JPG, PNG, WebP, HEIC — up to 20 MB</p>
+      </div>
+      <input type="file" id="fileInput" accept="image/*" multiple hidden />
+    </div>
+    <div class="upload-options">
+      <label class="coins-label">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><text x="12" y="16" text-anchor="middle" font-size="12" fill="currentColor" font-weight="700">$</text></svg>
+        Reward Coins
+      </label>
+      <input type="number" id="uploadCoins" class="coins-input" value="10" min="1" max="9999" />
+    </div>
+  </section>
+
+  <!-- Upload Progress -->
+  <div class="upload-progress" id="uploadProgress" hidden>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <span class="progress-text" id="progressText">Uploading…</span>
+  </div>
+
+  <!-- Wallpaper Grid -->
+  <section class="grid-section">
+    <div class="section-header">
+      <h2 class="section-title">All Wallpapers</h2>
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="active">Active</button>
+        <button class="filter-tab" data-filter="inactive">Inactive</button>
+      </div>
+    </div>
+    <div class="wallpaper-grid" id="wallpaperGrid">
+      <!-- Cards rendered by JS -->
+    </div>
+    <div class="empty-state" id="emptyState" hidden>
+      <div class="empty-icon">📱</div>
+      <p class="empty-title">No wallpapers yet</p>
+      <p class="empty-hint">Upload your first wallpaper to get started</p>
+    </div>
+  </section>
+
+  <!-- Toast -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Delete Confirmation Modal -->
+  <div class="modal-overlay" id="deleteModal" hidden>
+    <div class="modal">
+      <h3 class="modal-title">Delete Wallpaper</h3>
+      <p class="modal-text">This action cannot be undone. The wallpaper will be permanently removed.</p>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="cancelDelete">Cancel</button>
+        <button class="btn btn-danger" id="confirmDelete">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

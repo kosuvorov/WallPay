@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14B6C83DB264FE71A7ABF58A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F1AB2F8EBD1575B88B5BE2 /* Assets.xcassets */; };
+		1E00B5F538326DF797BAF335 /* WallpaperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4966CC225EEF3B34D3D71 /* WallpaperManager.swift */; };
+		1EF2DDAA87606BEC664FB41E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED05749A1520ED927F1072D /* APIService.swift */; };
+		40F4136DDFF7B5150741182D /* RewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA7DD34AC5B29E25E808C2 /* RewardsView.swift */; };
+		56EB2C2A3E3CE775575B4330 /* WallpaperDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DDF38089AB7ACD98B5351B /* WallpaperDetailView.swift */; };
+		780FF85E8D1DCD3AE748BA66 /* WallPayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37952BB6556B0C577FE67556 /* WallPayApp.swift */; };
+		ADB0F914B2A69A38388BF207 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0696CF7890017075ECFECF /* GalleryView.swift */; };
+		C388973FB2C807055C32A635 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A866DAA21C93DF11B65E8B /* SettingsView.swift */; };
+		D5903162BE214CBD2B1F6990 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31571C3695B9B8FFAF06E7AF /* ContentView.swift */; };
+		DC91C9DFC729CD8BAF17D74A /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7827FB3E7F415E2C216BE12A /* Models.swift */; };
+		FF66202743262AA573EBE241 /* RewardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F72F863B87CC97EA156B1A /* RewardManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		31571C3695B9B8FFAF06E7AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		37952BB6556B0C577FE67556 /* WallPayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPayApp.swift; sourceTree = "<group>"; };
+		37EF18C9B7E2F0480257F50A /* WallPay.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = WallPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BCA7DD34AC5B29E25E808C2 /* RewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsView.swift; sourceTree = "<group>"; };
+		7827FB3E7F415E2C216BE12A /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		78F72F863B87CC97EA156B1A /* RewardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardManager.swift; sourceTree = "<group>"; };
+		95A866DAA21C93DF11B65E8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AED05749A1520ED927F1072D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		C8E4966CC225EEF3B34D3D71 /* WallpaperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperManager.swift; sourceTree = "<group>"; };
+		E4F1AB2F8EBD1575B88B5BE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB0A49678746D08E9A31E1AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F9DDF38089AB7ACD98B5351B /* WallpaperDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperDetailView.swift; sourceTree = "<group>"; };
+		FC0696CF7890017075ECFECF /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0D48CE79FD149B5919F1B0B1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AED05749A1520ED927F1072D /* APIService.swift */,
+				78F72F863B87CC97EA156B1A /* RewardManager.swift */,
+				C8E4966CC225EEF3B34D3D71 /* WallpaperManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		703412FACD6962EA8DCE2517 /* WallPay */ = {
+			isa = PBXGroup;
+			children = (
+				E4F1AB2F8EBD1575B88B5BE2 /* Assets.xcassets */,
+				31571C3695B9B8FFAF06E7AF /* ContentView.swift */,
+				EB0A49678746D08E9A31E1AD /* Info.plist */,
+				37952BB6556B0C577FE67556 /* WallPayApp.swift */,
+				DCD1A7B36FC9198FB464D321 /* Models */,
+				0D48CE79FD149B5919F1B0B1 /* Services */,
+				C7468DB9DE1FA21A75F46483 /* Views */,
+			);
+			path = WallPay;
+			sourceTree = "<group>";
+		};
+		7489663E7E24456BECBE9D5B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37EF18C9B7E2F0480257F50A /* WallPay.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		756599FA7248BA1F20CFA1B0 = {
+			isa = PBXGroup;
+			children = (
+				703412FACD6962EA8DCE2517 /* WallPay */,
+				7489663E7E24456BECBE9D5B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C7468DB9DE1FA21A75F46483 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC0696CF7890017075ECFECF /* GalleryView.swift */,
+				6BCA7DD34AC5B29E25E808C2 /* RewardsView.swift */,
+				95A866DAA21C93DF11B65E8B /* SettingsView.swift */,
+				F9DDF38089AB7ACD98B5351B /* WallpaperDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DCD1A7B36FC9198FB464D321 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7827FB3E7F415E2C216BE12A /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		628417EE8676A8E0F064EBAA /* WallPay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA719C6BBFC1C6642E0D90B4 /* Build configuration list for PBXNativeTarget "WallPay" */;
+			buildPhases = (
+				37B78EB6199D865B1A7F4790 /* Sources */,
+				4EE0D6F9EE20FBF91308B041 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WallPay;
+			packageProductDependencies = (
+			);
+			productName = WallPay;
+			productReference = 37EF18C9B7E2F0480257F50A /* WallPay.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01A66DA74F90B345DD5B59B5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					628417EE8676A8E0F064EBAA = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7928D21D9ADC36F7485A3862 /* Build configuration list for PBXProject "WallPay" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 756599FA7248BA1F20CFA1B0;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				628417EE8676A8E0F064EBAA /* WallPay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4EE0D6F9EE20FBF91308B041 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14B6C83DB264FE71A7ABF58A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37B78EB6199D865B1A7F4790 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EF2DDAA87606BEC664FB41E /* APIService.swift in Sources */,
+				D5903162BE214CBD2B1F6990 /* ContentView.swift in Sources */,
+				ADB0F914B2A69A38388BF207 /* GalleryView.swift in Sources */,
+				DC91C9DFC729CD8BAF17D74A /* Models.swift in Sources */,
+				FF66202743262AA573EBE241 /* RewardManager.swift in Sources */,
+				40F4136DDFF7B5150741182D /* RewardsView.swift in Sources */,
+				C388973FB2C807055C32A635 /* SettingsView.swift in Sources */,
+				780FF85E8D1DCD3AE748BA66 /* WallPayApp.swift in Sources */,
+				56EB2C2A3E3CE775575B4330 /* WallpaperDetailView.swift in Sources */,
+				1E00B5F538326DF797BAF335 /* WallpaperManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4E6FA99010ABFCE321AE2CB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		A55CF5A5DD495AFDB155ACEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		C653E5A849DD009A9D170B46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WallPay/Info.plist;
+				INFOPLIST_KEY_LSApplicationQueriesSchemes = shortcuts;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wallpay.app;
+				PRODUCT_NAME = WallPay;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CF7244D625862071156CBD53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WallPay/Info.plist;
+				INFOPLIST_KEY_LSApplicationQueriesSchemes = shortcuts;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wallpay.app;
+				PRODUCT_NAME = WallPay;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7928D21D9ADC36F7485A3862 /* Build configuration list for PBXProject "WallPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A55CF5A5DD495AFDB155ACEC /* Debug */,
+				4E6FA99010ABFCE321AE2CB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CA719C6BBFC1C6642E0D90B4 /* Build configuration list for PBXNativeTarget "WallPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF7244D625862071156CBD53 /* Debug */,
+				C653E5A849DD009A9D170B46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01A66DA74F90B345DD5B59B5 /* Project object */;
+}
